@@ -1,0 +1,152 @@
+import type { Workout, Goal, UserProfile } from '@/types'
+
+// Helper to get a date N days ago
+function daysAgo(n: number): string {
+  const d = new Date()
+  d.setDate(d.getDate() - n)
+  return d.toISOString().split('T')[0]
+}
+
+export const SAMPLE_WORKOUTS: Workout[] = [
+  {
+    id: 'w1',
+    name: 'Morning Run',
+    type: 'Running',
+    date: daysAgo(0),
+    durationMinutes: 35,
+    caloriesBurned: 310,
+    notes: 'Felt great, steady pace',
+    completed: true,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'w2',
+    name: 'Bench Press & Squats',
+    type: 'Strength',
+    date: daysAgo(1),
+    durationMinutes: 55,
+    sets: 4,
+    reps: 10,
+    caloriesBurned: 420,
+    notes: 'Increased weight on squats',
+    completed: true,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'w3',
+    name: 'Yoga Flow',
+    type: 'Yoga',
+    date: daysAgo(2),
+    durationMinutes: 45,
+    caloriesBurned: 180,
+    notes: 'Great for flexibility',
+    completed: true,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'w4',
+    name: 'Cycling Session',
+    type: 'Cycling',
+    date: daysAgo(3),
+    durationMinutes: 60,
+    caloriesBurned: 500,
+    notes: 'Hill intervals',
+    completed: true,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'w5',
+    name: 'HIIT Cardio',
+    type: 'Cardio',
+    date: daysAgo(4),
+    durationMinutes: 30,
+    caloriesBurned: 360,
+    completed: true,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'w6',
+    name: 'Pull-up & Rows',
+    type: 'Strength',
+    date: daysAgo(6),
+    durationMinutes: 50,
+    sets: 3,
+    reps: 12,
+    caloriesBurned: 380,
+    completed: true,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'w7',
+    name: 'Easy Run',
+    type: 'Running',
+    date: daysAgo(7),
+    durationMinutes: 25,
+    caloriesBurned: 210,
+    completed: false,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'w8',
+    name: 'Core & Abs',
+    type: 'Strength',
+    date: daysAgo(9),
+    durationMinutes: 40,
+    sets: 3,
+    reps: 15,
+    caloriesBurned: 290,
+    completed: true,
+    createdAt: new Date().toISOString(),
+  },
+]
+
+export const SAMPLE_GOALS: Goal[] = [
+  {
+    id: 'g1',
+    title: 'Complete 5 workouts per week',
+    type: 'workouts',
+    targetValue: 5,
+    currentValue: 4,
+    deadline: daysAgo(-3),
+    completed: false,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'g2',
+    title: 'Exercise for 150 minutes per week',
+    type: 'minutes',
+    targetValue: 150,
+    currentValue: 125,
+    deadline: daysAgo(-3),
+    completed: false,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'g3',
+    title: 'Burn 2000 calories this week',
+    type: 'calories',
+    targetValue: 2000,
+    currentValue: 1770,
+    deadline: daysAgo(-3),
+    completed: false,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'g4',
+    title: 'Run 20 km this month',
+    type: 'kilometers',
+    targetValue: 20,
+    currentValue: 20,
+    deadline: daysAgo(-14),
+    completed: true,
+    createdAt: new Date().toISOString(),
+  },
+]
+
+export const SAMPLE_USER: UserProfile = {
+  name: 'Alex Johnson',
+  email: 'alex@fittrack.app',
+  fitnessGoal: 'Build strength and improve endurance',
+  preferredWorkout: 'Strength',
+  joinedDate: daysAgo(120),
+}
