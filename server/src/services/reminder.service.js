@@ -4,7 +4,7 @@
  * In production: replace sendReminder() with Nodemailer / Twilio calls.
  */
 
-const { REMINDER_LEAD_HOURS } = require('../../../shared/constants');
+const { REMINDER_LEAD_HOURS } = require('../constants');
 
 /**
  * Insert a reminder row scheduled 24 h before the slot.

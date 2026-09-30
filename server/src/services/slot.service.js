@@ -11,7 +11,7 @@ const db           = require('../config/db');
 const availQ       = require('../db/queries/availability');
 const apptQ        = require('../db/queries/appointments');
 const reminderSvc  = require('./reminder.service');
-const { SLOT_DURATION_MINUTES, APPOINTMENT_STATUS } = require('../../../shared/constants');
+const { SLOT_DURATION_MINUTES, APPOINTMENT_STATUS } = require('../constants');
 
 function makeError(message, statusCode, code) {
   const err = new Error(message);
@@ -142,7 +142,7 @@ async function bookSlot({ patientId, doctorId, slotStart, reason }) {
  * Reschedule: cancel the old appointment and book the new slot atomically.
  */
 async function rescheduleSlot({ appointmentId, patientId, newSlotStart }) {
-  const { CANCELLATION_WINDOW_HOURS } = require('../../../shared/constants');
+  const { CANCELLATION_WINDOW_HOURS } = require('../constants');
 
   const existing = await apptQ.findById(appointmentId);
   if (!existing) throw makeError('Appointment not found', 404, 'NOT_FOUND');

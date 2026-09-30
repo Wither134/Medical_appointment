@@ -5,7 +5,7 @@
 
 const apptQ  = require('../db/queries/appointments');
 const apptDB = require('../db/queries/appointments');
-const { APPOINTMENT_STATUS, CANCELLATION_WINDOW_HOURS } = require('../../../shared/constants');
+const { APPOINTMENT_STATUS, CANCELLATION_WINDOW_HOURS } = require('../constants');
 
 function makeError(message, statusCode, code) {
   const err = new Error(message);
