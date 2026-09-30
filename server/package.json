@@ -1,6 +1,6 @@
 {
   "name": "medical-scheduler-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Medical Appointment Scheduler — Express API",
   "main": "server.js",
   "scripts": {
